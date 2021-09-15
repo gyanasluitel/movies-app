@@ -1,121 +1,430 @@
 body {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #1d1f38;
+  background-color: #393e46;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-header {
-  background-color: #373b69;
+.loader {
   display: flex;
-  justify-content: space-between;
-  padding: 0.5rem 1rem 0 1rem;
-  color: white;
+  justify-content: center;
+  align-items: center;
 }
 
-.home-icon {
-  padding: 4px 0;
-  width: 50px;
-  height: 45px;
-  color: #fff;
+/* Navigation CSS */
+.nav-bar {
+  background-color: #313235;
+  width: 100%;
+  padding: 10px 0 10px 0;
 }
 
-.home-icon:hover {
-  cursor: pointer;
+.nav-list {
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+  /* margin-left: 20px;
+  margin-right: 20px; */
 }
 
+/* .nav-home {
+  border: 1px solid red;
+} */
+
+.nav-home a {
+  color: #ffd369;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.nav-details {
+  margin-left: auto;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nav-item a {
+  display: inline-block;
+  padding: 0 15px;
+  color: #ffd369;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+/* MOVIE CONTAINER (HOME PAGE) AND MOVIE STYLING*/
 .movie-container {
+  margin: 2% 6%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.movie {
-  background-color: #373b69;
-  width: 250px;
-  margin: 1rem;
-  position: relative;
-  overflow: hidden;
+.movie-card {
+  width: 300px;
+  margin: 1.5rem;
+  color: #eeeeee;
 }
 
-.movie img {
+.movie-card h4 {
+  margin: 4px 0 0 0;
+}
+
+.movie-date {
+  font-size: 14px;
+  margin: 3px 0 0 0;
+  font-style: italic;
+}
+
+.img-card {
+  border: 5px solid #eeeeee;
+  border-bottom: 3px solid #eeeeee;
+  background-color: #eeeeee;
+}
+
+.img-card img {
   max-width: 100%;
-  height: 400px;
 }
 
-.movie-info {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem;
+.img-card:hover {
+  background-color: #ffd369;
+  border-color: #ffd369;
+  cursor: pointer;
+}
+
+.details-button a {
   color: white;
 }
 
-.movie-info h3 {
-  margin: 0;
+/* DETAILS MOVIE CONTAINER AND DETAILS CARD */
+
+.details-container {
+  margin: 2% 6%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: #fff;
+}
+
+.container1 {
+  flex-basis: 70%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.details-movie {
+  margin-left: 2%;
+  width: 70%;
+}
+
+.details-card {
+  border: 1px solid yellow;
+  width: 25%;
+  margin-top: 1.5rem;
+  color: #eeeeee;
+}
+
+.details-img-card {
+  border: 5px solid #eeeeee;
+  border-bottom: 3px solid #eeeeee;
+  background-color: #eeeeee;
+}
+
+.details-img-card img {
+  max-width: 100%;
+}
+
+.movie-extras {
+  flex-basis: 30%;
+}
+
+.genre {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.icons {
+  margin-right: 5px;
 }
 
 .movie-overview {
-  background-color: rgb(255, 255, 255);
-  color: #1d1f38;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  transform: translateY(102%);
-  transition: transform 0.3s ease-in-out;
-  padding: 0 5%;
-  overflow: auto;
-  max-height: 100%;
+  margin-top: 30px;
 }
 
-.movie:hover .movie-overview {
-  transform: translateY(0%);
-}
-
-.search {
-  background-color: transparent;
-  border: 2px solid #22254b;
-  border-radius: 50px;
-  color: white;
-  font-family: inherit;
+.movie-overview span {
   font-size: 1.2rem;
-  margin: 0.3rem 0 0.5rem 0;
-  padding: 0.5rem 1rem;
-}
-
-.search:focus {
-  outline: none;
-}
-
-.root-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.tag {
-  background-color: #1d1f38;
-  border-radius: 5px;
   font-weight: bold;
-  padding: 0.5rem;
 }
 
-.tag.green {
-  color: rgb(11, 206, 11);
+.movie-overview p {
+  color: #e3e5e9;
 }
 
-.tag.orange {
-  color: orange;
+.movie-cast {
+  display: block;
+  margin-bottom: 2px;
 }
 
-.tag.red {
-  color: red;
+.release-date {
+  font-size: 1.1rem;
+  margin-bottom: 2px;
+}
+
+/* SIMILAR MOVIE CONTAINER AND CARD */
+.similar-movie-container {
+  margin-left: 2%;
+  text-align: center;
+}
+
+.similar-movie-card-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.similar-movie-card {
+  width: 150px;
+  margin: 0 1.2rem 0.5rem 0;
+  color: #eeeeee;
+}
+
+.similar-movie-img-card {
+  border: 5px solid #eeeeee;
+  border-bottom: 3px solid #eeeeee;
+  background-color: #eeeeee;
+}
+
+.similar-movie-img-card:hover {
+  background-color: #ffd369;
+  border-color: #ffd369;
+  cursor: pointer;
+}
+
+.similar-movie-img-card img {
+  max-width: 100%;
+}
+
+/* MOVIE-CREDIT CONTAINER */
+.movie-credit-container {
+  margin-top: 1%;
+}
+
+.cast-heading {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* PLAN TO WATCH CONTAINER */
+.plantowatch-container {
+  margin: 2% 6%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.watched-container {
+  margin: 2% 6%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+/* BROWSE FORM CSS*/
+.browse-form {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+
+.browse-input {
+  padding: 8px;
+  border: 1px solid #eeeeee;
+  border-radius: 2px;
+  background-color: #222831;
+  color: #eeeeee;
+  font-size: 1rem;
+  height: 2rem;
+  width: 62%;
+}
+
+::placeholder {
+  color: #eeeeee;
+  font-size: 0.9rem;
+}
+
+.browse-button {
+  border: 1px solid #eeeeee;
+  border-radius: 2px;
+  background-color: #ffd369;
+  color: #222831;
+  font-size: 0.9rem;
+  height: 2.4rem;
+  margin-left: 1.2%;
+  padding: 5px;
+  text-align: center;
+  width: 28%;
+}
+
+.browse-button:hover {
+  background-color: #ebb330;
+  cursor: pointer;
+}
+
+/* BUTTON CONTROLS */
+.btn-controls {
+  background-color: #ffd369;
+  font-size: 0.9rem;
+  padding: 5px 8px;
+  border: 1px solid white;
+  border-radius: 2px;
+  margin-right: 1.2%;
+}
+
+.btn-controls:hover {
+  background-color: #ebb330;
+  cursor: pointer;
+}
+
+.btn-controls:disabled {
+  cursor: not-allowed;
+}
+
+/* BUTTONS ON WATCHED AND PLAN TO WATCH (MOVIE-CONTROLS) */
+.inner-card-controls {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.ctrl-btn {
+  background-color: #ffd369;
+  font-size: 0.8rem;
+  padding: 5px 8px;
+  border: 1px solid white;
+  border-radius: 2px;
+  margin-right: 1.2%;
+  margin-left: 2%;
+}
+
+.ctrl-btn:hover {
+  background-color: #ebb330;
+}
+
+/* @media only screen and (max-width: 1024px) and (min-width: 768px) {
+  .details-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+} */
+
+@media screen and (min-width: 800px) {
+  .plantowatch-container {
+    justify-content: space-around;
+  }
+
+  .watched-container {
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container1 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .details-card {
+    width: 250px;
+  }
+
+  .details-movie {
+    margin-left: 0;
+    width: 90%;
+  }
+
+  .synopsis-cast {
+    border: 1px solid yellow;
+    width: 90%;
+  }
+
+  .similar-movie-container {
+    margin-left: 0;
+  }
+
+  .btn-controls {
+    width: 45%;
+  }
+
+  .plantowatch-container {
+    justify-content: center;
+  }
+
+  .watched-container {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .details-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-list {
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+
+  .nav-home {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .nav-home a {
+    display: block;
+    padding: 0;
+    text-decoration: none;
+    /* text-align: center; */
+    font-size: 1.2rem;
+  }
+
+  /* .nav-home a {
+    text-align: center;
+  } */
+
+  .nav-details {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-item {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .nav-item a {
+    display: block;
+    padding: 0;
+    margin-top: 10px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ctrl-btn {
+    width: 46%;
+  }
+
+  .remove {
+    height: 30px;
+  }
 }
